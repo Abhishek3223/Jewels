@@ -1,5 +1,8 @@
+import Navbar from '@/components/Navbar/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Footer from '@/components/Footer/Footer'
+import Provider from "@/components/Provider";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,8 +13,32 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang='en'>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+     
+        <script src="https://kit.fontawesome.com/216ac05c05.js" crossorigin="anonymous"></script>
+      </head>
+
+      <body>
+        <Provider>
+
+          <div className='main'>
+            <div className='gradient' />
+          </div>
+
+          <main className='app'>
+            <Navbar />
+            {/* <div style="margin-top:10vh"> */}
+            {children}
+            {/* </div> */}
+            <Footer />
+          </main>
+
+        </Provider>
+      </body>
+
     </html>
   )
 }

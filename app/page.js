@@ -1,95 +1,185 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import React from 'react'
 
-export default function Home() {
+import './firstsection.css'
+import Image from 'next/image'
+import Link from 'next/link'
+
+
+
+const Firstsection = (props) => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+    <div style={{ 'padding-top': '10vh' }} >
+      <div div className="firstsection-maincontent" >
+        <div className="firstsection-contenttext">
+          <p className="firstsection-text h1">
+            {/* <span> */}
+            Your One-Stop Destination for Unique and Exquisite Jewelry
+            Pieces
+            {/* </span> */}
+          </p>
+          <p className="firstsection-text02 text1">
+            <span>
+              Here, we offer various types of jewelry, including necklaces,
+              bracelets, earrings, and rings. From classic designs to modern
+              styles, we have something for everyone.
+            </span>
+          </p>
+          <div className="firstsection-headerbtn">
+            <span className="firstsection-text04 btntext1">
+              <span>Shop The Collection</span>
+            </span>
+          </div>
+        </div>
+        <img
+          src="/pinkcheekedredheadwomanplayswithherpearlnecklacela2033-ur5-700h.png"
+          alt="pinkcheekedredheadwomanplayswithherpearlnecklacela2033"
+
+          className="modal-image"
+        />
+      </div >
+
+      {/* <div className="secondsection-container"> */}
+      <div className="secondsection-secondsection">
+        <div className="secondsection-title">
+          <span className="secondsection-text h2">
+            New Collection
+          </span>
+        </div>
+        <div className="secondsection-image">
+          <div className="secondsection-necklaces">
+            <img
+              src="/displayshinyluxuriousgoldenchain12058-2x5-400w.png"
+              alt="displayshinyluxuriousgoldenchain12058"
+              className=""
             />
-          </a>
+            <div className="secondsection-btn">
+              <span className="secondsection-text2">
+                <span>Necklaces</span>
+              </span>
+            </div>
+          </div>
+          <div className="secondsection-necklaces">
+            <img
+
+              src="/highangleaestheticgoldenearringsarrangement12058-ct2s-400w.png"
+              alt="highangleaestheticgoldenearringsarrangement12058"
+              className=""
+            />
+            <div className="secondsection-btn">
+
+              <span className="secondsection-text2">
+
+                <span>Earrings</span>
+              </span>
+            </div>
+          </div>
+          <div className="secondsection-necklaces">
+            <img
+              src="/weddingring.png"
+              alt="weddingrings"
+              className=""
+            />
+            <div className="secondsection-btn">
+
+              <span className="secondsection-text2">
+
+                <span>Wedding Rings</span>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
+      {/* </div> */}
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+
+      {/* third secrtion */}
+
+      <div className="third-section">
+        <div className="secondsection-title2">
+          <span className="secondsection-text h2">
+            A diamond is a woman`s best friends!
+          </span>
+        </div>
+        <p className='disc'> A diamond is a timeless symbol of beauty and friendship, making it the perfect gift for any woman. It is often said that diamonds are a woman's best friend, and for good reason. Not only does a diamond represent unwavering loyalty and devotion, but it is also a symbol of luxury, glamor and class. A diamond tells the world that you are proud of your loved one, and want them to have only the best. As Coco Chanel once said, "A diamond is eternity, it is real and it is unbreakable".</p>
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      {/*fourth section  */}
+      <div className="fourth-section">
+        <div className="secondsection-title2">
+          <span className="secondsection-text h2">
+            Best Sellers
+          </span>
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        <div className="imag-cont1 img-cont ">
+          <Link href='product/asdsa'>
+            <div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
+              <img src="/Rectangle18.png" alt="" srcset="" />
+              <p className='img-title'>High angle golden earrings</p>
+              <p className='img-price'>Rs 10000</p>
+            </div>
+          </Link>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <Link href='product/asdsa'>
+
+            <div>
+              <img src="/Rectangle19.png" alt="" srcset="" />
+
+              <p className='img-title'>High angle golden earrings</p>
+              <p className='img-price'>Rs 10000</p>
+            </div>
+          </Link>
+
+
+        </div>
+        <div className="imag-cont2  img-cont ">
+
+          <Link href='product/asdsa'>
+
+            <div>
+              <img src="/Rectangle20.png" alt="" srcset="" />
+              <p className='img-title'>High angle golden earrings</p>
+              <p className='img-price'>Rs 10000</p>
+            </div>
+          </Link>
+
+          <Link href='product/asdsa'>
+
+            <div>
+              <img src="/Rectangle21.png" alt="" srcset="" />
+
+              <p className='img-title'>High angle golden earrings</p>
+              <p className='img-price'>Rs 10000</p>
+            </div>
+          </Link>
+
+        </div>
+        <div className="imag-cont3   img-cont ">
+
+          <Link href='product/asdsa'>
+
+
+            <div >
+              <img src="/Rectangle22.png" alt="" srcset="" />
+              <p className='img-title'>High angle golden earrings</p>
+              <p className='img-price'>Rs 10000</p>
+            </div>
+          </Link>
+          <Link href='product/asdsa'>
+
+            <div>
+              <img src="/Rectangle23.png" alt="" srcset="" />
+
+              <p className='img-title'>High angle golden earrings</p>
+              <p className='img-price'>Rs 10000</p>
+            </div>
+          </Link>
+
+        </div>
       </div>
-    </main>
+    </div>
   )
 }
+
+export default Firstsection
