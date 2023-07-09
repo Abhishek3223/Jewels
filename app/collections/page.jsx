@@ -1,6 +1,6 @@
 import React from 'react'
 import './collection.css'
-
+import Link from 'next/link'
 
 const ProductCard = () => {
     return (
@@ -85,18 +85,27 @@ const collections = () => {
                 </p>
             </div>
             <div className="product-cont">
+                <Link href="/product/id">
+                    <ProductCard />
+                </Link>
+                <Link href="/product/id">
+                    <ProductCard />
+                </Link>
+                <Link href="/product/id">
+                    <ProductCard />
+                </Link>
+                <Link href="/product/id">
+                    <ProductCard />
+                </Link>
+                <Link href="/product/id">
+                    <ProductCard />
+                </Link>
+                <Link href="/product/id">
+                    <ProductCard />
+                </Link>
 
 
 
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
             </div>
 
 

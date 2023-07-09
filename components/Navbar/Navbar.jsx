@@ -38,12 +38,12 @@ const Navbar = () => {
             </div>
 
             <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
-                <li><a href="#" >Home</a></li>
+                <li onClick={toggleMenu}><a href="/" >Home</a></li>
 
-                <li><a href="/collections">Collection</a></li>
+                <li onClick={toggleMenu}><a href="/collections">Collections</a></li>
 
-                <li><a href="/">Contact Us</a></li>
-                <li>
+                <li onClick={toggleMenu}><a href="/">Contact Us</a></li>
+                <li onClick={toggleMenu}>
                     <div className="firstsection-singicon">
                         <Link href='/MyCart'>
                             <Image
@@ -59,7 +59,7 @@ const Navbar = () => {
                 </li>
 
                 {/* <div className="firstsection-basketicon"> */}
-                <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
+                <li onClick={toggleMenu} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                     {session?.user ?
 
 
@@ -76,6 +76,7 @@ const Navbar = () => {
                                 <div class="dropdown-options">
                                     <p onClick={() => {
                                         signOut();
+                                        toggleMenu();
                                     }} >Logout</p>
                                 </div>
                             </div>
@@ -89,7 +90,7 @@ const Navbar = () => {
                             {/* {providers &&
                                 Object.values(providers).map((provider) => ( */}
 
-                            <button type='button' className='login-button'>
+                            <button type='button' style={{ color: "white" }} className='login-button'>
                                 Sign in
                             </button>
                         </Link>

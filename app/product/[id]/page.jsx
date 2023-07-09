@@ -12,7 +12,12 @@ const ProductDetail = () => {
 
         document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
     };
-
+    const Img = [
+        "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_1.jpg?sw=1240&sh=1240",
+        "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_2.jpg?sw=1240&sh=1240",
+        "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_1.jpg?sw=1240&sh=1240",
+        "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_2.jpg?sw=1240&sh=1240"
+    ]
     const handleImageClick = (event, id) => {
         event.preventDefault();
         setImgId(id);
@@ -28,33 +33,27 @@ const ProductDetail = () => {
                     <div className="product-imgs">
                         <div className="img-display">
                             <div className="img-showcase">
-                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_1.jpg?sw=1240&sh=1240" alt="shoe image" />
-                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw7619d667/images/hi-res/51D3B1SSBABACZ_2.jpg?sw=1240&sh=1240" alt="shoe image" />
-                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_1.jpg?sw=1240&sh=1240" alt="shoe image" />
-                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_2.jpg?sw=1240&sh=1240" alt="shoe image" />
+                                {Img.map((product, index) => {
+                                    return (
+                                        <img key={index} src={product} alt="shoe image" />
+                                    );
+                                })}
+
                             </div>
                         </div>
                         <div className="img-select">
-                            <div className="img-item">
-                                <a href="#" data-id="1" onClick={(e) => handleImageClick(e, 1)}>
-                                    <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_1.jpg?sw=1240&sh=1240" alt="shoe image" />
-                                </a>
-                            </div>
-                            <div className="img-item">
-                                <a href="#" data-id="2" onClick={(e) => handleImageClick(e, 2)}>
-                                    <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_2.jpg?sw=1240&sh=1240" alt="shoe image" />
-                                </a>
-                            </div>
-                            <div className="img-item">
-                                <a href="#" data-id="3" onClick={(e) => handleImageClick(e, 3)}>
-                                    <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_1.jpg?sw=1240&sh=1240" alt="shoe image" />
-                                </a>
-                            </div>
-                            <div className="img-item">
-                                <a href="#" data-id="4" onClick={(e) => handleImageClick(e, 4)}>
-                                    <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_2.jpg?sw=1240&sh=1240" alt="shoe image" />
-                                </a>
-                            </div>
+                            {Img.map((product, index) => {
+                                return (
+
+                                    <div key={index} className="img-item">
+                                        <a href="#" data-id="1" onClick={(e) => handleImageClick(e, 1)}>
+                                            <img src={product} alt="shoe image" />
+                                        </a>
+                                    </div>
+                                );
+                            })}
+
+
                         </div>
                     </div>
                     {/* card right */}
@@ -91,7 +90,7 @@ const ProductDetail = () => {
 
                         <div className="purchase-info">
                             <input type="number" min="0" value="1" />
-                            <button type="button" className="login-button">
+                            <button type="button" style={{ color: "white" }} className="login-button">
                                 Add to Cart <i className="fas fa-shopping-cart"></i>
                             </button>
                             {/* <button type="button" className="btn">Compare</button> */}
@@ -124,7 +123,7 @@ const ProductDetail = () => {
 
 export default ProductDetail;
 
-// const Product = () => {
+
 //     const params = useParams();
 //     const [imgId, setImgId] = useState(1);
 //     const slideImage = () => {

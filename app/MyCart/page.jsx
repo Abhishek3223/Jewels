@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 // import ProductList from './ProductList';
 // import Summary from './Summary';
 import './mycart.css'
+import Link from 'next/link';
 
 
 
@@ -87,7 +88,7 @@ const Summary = ({
     const total = subTotal - discount + tax;
 
     return (
-        <section  className="container sumtotal">
+        <section className="container sumtotal">
 
 
             <div className="summary">
@@ -120,14 +121,14 @@ const Summary = ({
 const PRODUCTS = [
     {
         image: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_1.jpg?sw=200&sh=150",
-        name: "PRODUCT ITEM NUMBER 1",
+        name: "Contemporary Floral Stud Earrings",
         description: "Description for product item number 1",
         price: 5.99,
         quantity: 2
     },
     {
         image: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_2.jpg?sw=200&sh=150",
-        name: "PRODUCT ITEM NUMBER 2",
+        name: "High angle Golden Earing",
         description: "Description for product item number 1",
         price: 9.99,
         quantity: 1
@@ -227,7 +228,11 @@ const Page = () => {
             ) : (
                 <div className="empty-product">
                     <h3>There are no products in your cart.</h3>
-                    <button onClick={() => setProducts(PRODUCTS)}>Shop now</button>
+                    <button >
+                        <Link href='/collections' style={{color:'white'}}>
+                            Shop now
+                        </Link>
+                    </button>
                 </div>
             )}
         </div>

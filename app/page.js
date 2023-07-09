@@ -25,9 +25,11 @@ const Firstsection = (props) => {
             </span>
           </p>
           <div className="firstsection-headerbtn">
-            <span className="firstsection-text04 btntext1">
-              <span>Shop The Collection</span>
-            </span>
+            <Link href='/collections'>
+              <span className="firstsection-text04 btntext1">
+                <span>Shop The Collection</span>
+              </span>
+            </Link>
           </div>
         </div>
         <img
@@ -44,6 +46,7 @@ const Firstsection = (props) => {
           <span className="secondsection-text h2">
             New Collection
           </span>
+          {/* </Link> */}
         </div>
         <div className="secondsection-image">
           <div className="secondsection-necklaces">

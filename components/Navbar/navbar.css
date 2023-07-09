@@ -43,6 +43,9 @@ nav {
 .logo {
   padding: 1vh 1vw;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .logo img {
   height: 5rem;
@@ -140,7 +143,7 @@ nav {
   background-color: #b07b54;
   color: #ffffff;
 }
-.dropdown-options:hover a{
+.dropdown-options:hover a {
   color: white;
 }
 .navlinks2 {
@@ -172,8 +175,9 @@ nav {
   .nav-links {
     position: fixed;
     /* z-index: 100; */
+    top: 10vh;
+    right: 0px;
     background-color: rgba(233, 216, 206, 1);
-
     height: 100vh;
     width: 100%;
     flex-direction: column;
@@ -191,7 +195,7 @@ nav {
     color: black;
   }
   .nav-links li {
-    opacity: 0;
+    opacity: 1;
     color: #bcbcbc;
   }
   .nav-links li:nth-child(1) {
