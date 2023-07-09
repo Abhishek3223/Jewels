@@ -17,8 +17,8 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-     
-        <script src="https://kit.fontawesome.com/216ac05c05.js" crossorigin="anonymous"></script>
+
+        <script src="https://kit.fontawesome.com/216ac05c05.js" crossorigin="anonymous" async />
       </head>
 
       <body>

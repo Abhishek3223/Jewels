@@ -37,7 +37,7 @@ const Footer = () => {
                         <a href="#"><li>About Us</li></a>
                         <a href="#"><li>Contact</li></a>
                         <a href="#"><li>Privacy Plan</li></a>
-                        <a href="#"><li>FAQ's</li></a>
+                        <a href="#"><li>`FAQs`</li></a>
                     </ul>
                 </div>
 
@@ -62,7 +62,7 @@ const Footer = () => {
 
 
             <div class="footer-bottom">
-                Copyright &copy; Lorem, ipsum dolor.
+                Copyright `&copy;`Lorem, ipsum dolor.
             </div>
         </div>
     )
