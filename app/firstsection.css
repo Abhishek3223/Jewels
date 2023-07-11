@@ -58,6 +58,9 @@
   .modal-image {
     display: none;
   }
+  .firstsection-contenttext {
+    padding-left: 25px;
+  }
 
   .firstsection-text {
     width: 90vw;

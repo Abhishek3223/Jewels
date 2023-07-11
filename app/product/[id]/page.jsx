@@ -3,21 +3,34 @@ import React, { useState } from 'react'
 import './product.css'
 import { useParams } from "next/navigation";
 
+import ProductList from '@/constant/List'
 
 const ProductDetail = () => {
-    const [imgId, setImgId] = useState(1);
 
+    const [imgId, setImgId] = useState(1);
+    const params = useParams();
+    const _id = params.id;
+    // console.log(_id);
+
+    let data = {};
+
+    // console.log(ProductList.length);
+    for (let index = 0; index < ProductList.length; index++) {
+        if (index + 1 == _id) {
+            data = ProductList[index];
+
+            break;
+        }
+
+    }
+
+    const Img = data.Img;
     const slideImage = () => {
         const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
 
         document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
     };
-    const Img = [
-        "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_1.jpg?sw=1240&sh=1240",
-        "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_2.jpg?sw=1240&sh=1240",
-        "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_1.jpg?sw=1240&sh=1240",
-        "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97df845c/images/hi-res/51D3B1SSBABACZ_2.jpg?sw=1240&sh=1240"
-    ]
+
     const handleImageClick = (event, id) => {
         event.preventDefault();
         setImgId(id);
@@ -58,8 +71,8 @@ const ProductDetail = () => {
                     </div>
                     {/* card right */}
                     <div className="product-content">
-                        <h2 class="product-title">Contemporary Floral Stud Earrings</h2>
-                        <a href="#" class="product-link">earings</a>
+                        <h2 class="product-title">{data.title}</h2>
+                        <a href="#" class="product-link">{data.category}</a>
                         <div className="product-rating">
                             <i className="fas fa-star"></i>
                             <i className="fas fa-star"></i>
@@ -70,8 +83,8 @@ const ProductDetail = () => {
                         </div>
 
                         <div className="product-price">
-                            <p className="last-price">Old Price: <span>$257.00</span></p>
-                            <p className="new-price">New Price: <span>$249.00 (5%)</span></p>
+                            <p className="last-price">Old Price: <span>{data.oldPrice}</span></p>
+                            <p className="new-price">New Price: <span>{data.newPrice} </span></p>
                         </div>
 
                         <div className="product-detail">
@@ -96,24 +109,7 @@ const ProductDetail = () => {
                             {/* <button type="button" className="btn">Compare</button> */}
                         </div>
 
-                        {/* <div className="social-links">
-                            <p>Share At: </p>
-                            <a href="#">
-                                <i className="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#">
-                                <i className="fab fa-twitter"></i>
-                            </a>
-                            <a href="#">
-                                <i className="fab fa-instagram"></i>
-                            </a>
-                            <a href="#">
-                                <i className="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="#">
-                                <i className="fab fa-pinterest"></i>
-                            </a>
-                        </div> */}
+
                     </div>
                 </div>
             </div>

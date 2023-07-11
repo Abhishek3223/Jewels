@@ -20,6 +20,15 @@ const Login = () => {
             setProviders(res);
         })();
     }, []);
+    
+    useEffect(() => {
+        (async () => {
+            if (session?.user) {
+                navigate.push('/')
+            }
+        })();
+    }, []);
+
 
     const toggleForm = () => {
         setIsSignUp(!isSignUp);
@@ -65,7 +74,6 @@ const Login = () => {
                                         key={provider.name}
                                         onClick={async () => {
                                             await signIn(provider.id);
-                                            navigate.push('/')
                                         }}>
 
                                         <i class="ion ion-logo-google"></i>
